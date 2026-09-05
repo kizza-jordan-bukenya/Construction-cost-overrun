@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import joblib
-
+from pathlib import Path
 
 # --------------------------------------------------
 # PAGE CONFIGURATION
@@ -18,7 +18,8 @@ st.set_page_config(
 # LOAD MODEL
 # --------------------------------------------------
 
-model = joblib.load("construction_cost_overrun_model.pkl")
+BASE_DIR = Path(__file__).resolve().parent
+model = joblib.load(BASE_DIR / "construction_cost_overrun_model.pkl")
 
 
 # --------------------------------------------------
